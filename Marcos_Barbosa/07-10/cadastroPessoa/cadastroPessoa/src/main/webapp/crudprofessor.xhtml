@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Cadastrar Professor</title>
+	</h:head>
+	<h:body>
+	
+			  <h:form>
+		            <h:outputLabel value="Disciplina:  "/>
+		            <h:inputText id="campoDisciplina" value="#{professor.disciplinaBean}"/>
+		       		<br/>
+		            <h:outputLabel value="Salario:   "/>
+		            <h:inputText id="campoSalario" value="#{professor.salarioBean}"/>
+		       		<br/>
+		            <h:commandButton value="Enviar" action="#{professor.salvarProfessor}"/>
+	          </h:form>
+	          
+	          <br/>
+			  <br/>
+				
+			  		<h:dataTable value="#{professor.professores}" var="cadProfessor" border="2" id="tabelaProfessor">
+			  		<h:column>
+						<f:facet name="header">Disciplina</f:facet>
+						#{cadProfessor.disciplina}
+				
+			  		</h:column>
+				
+			  		<h:column>
+						<f:facet name="header">Salario</f:facet>
+						#{cadProfessor.salario}
+				
+			  		</h:column>
+				
+			  </h:dataTable>
+				
+		
+		
+	</h:body>
+</html>

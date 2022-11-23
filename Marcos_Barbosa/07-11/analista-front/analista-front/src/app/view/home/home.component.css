@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.botao {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+

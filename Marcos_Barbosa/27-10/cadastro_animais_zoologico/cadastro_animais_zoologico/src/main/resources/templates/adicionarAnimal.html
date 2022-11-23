@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Adicionar Jaula</title>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+
+	<header>
+
+		<a href="/cuidadoresTabela" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Listar Tabela</a>
+
+	</header>
+
+
+
+
+	<div th:each="cuidador : ${cuidador}" class="container">
+
+		<p>Matricula: <span th:text="${cuidador.matricula}"></span></p>
+		<p>Nome: <span th:text="${cuidador.nome}"></span></p>
+		
+		<form method="post">
+			Nome:<input type="text" value="" name="nome"> 
+			Especie:<input type="text" value="" name="especie">
+		    Raca:<input type="text"value="" name="raca">
+		    DataDeNascimento:<input type="text"value="" name="dataDeNascimento">
+		   
+
+			<button class="waves-effect waves-light btn" type="submit">Enviar</button>
+		</form>
+
+	</div>
+	<div class="container">
+		<table class="striped">
+			<thead>
+				<tr>
+					<td>Nome</td>
+					<td>Especie</td>
+					<td>Raca</td>
+					<td>DataDeNascimento</td>
+
+				</tr>
+
+
+			</thead>
+			<tbody>
+				<tr th:each="animal : ${animais}">
+					<td><span th:text="${animal.nome}"></span></td>
+					<td><span th:text="${animal.epecie}"></span></td>
+					<td><span th:text="${animal.raca}"></span></td>
+					<td><span th:text="${animal.dataDeNascimento}"></span></td>
+
+				</tr>
+
+
+
+
+			</tbody>
+
+
+		</table>
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>

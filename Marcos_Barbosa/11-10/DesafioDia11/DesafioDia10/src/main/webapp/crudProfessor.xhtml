@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title>Cadastro de Professor</title>
+		</h:head>
+		<h:body>
+		
+			<h:form>
+				
+				<h:outputLabel value="Nome: "/>
+				<h:inputText id="campoNome" value="#{professorBean.professor.nome}"/>
+				<h:outputLabel value="Cpf: "/>
+				<h:inputText id="idCpf" value="#{professorBean.professor.cpf}"/>	
+				<h:outputLabel value="Endereco: "/>
+				<h:inputText id="campoEndereco" value="#{professorBean.professor.endereco}"/>
+				<h:outputLabel value="Disciplina: "/>
+				<h:inputText id="campoDisciplina" value="#{professorBean.professor.disciplina}"/>		
+				<h:outputLabel value="Salario: "/>
+				<h:inputText id="campoSalario" value="#{professorBean.professor.salario}"/>	
+				<h:commandButton value="Enviar" action="#{professorBean.salvarProfessor}"/>
+				
+			</h:form>
+			<h:form>
+				<h:dataTable value="#{professorBean.professores}" var="professorCad" border="2" id="tabela" >
+				
+				
+					<h:column>
+						<f:facet name="header">Nome: </f:facet>
+						#{professorCad.nome}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Cpf</f:facet>
+						#{professorCad.cpf}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header" >Endereco</f:facet>
+						#{professorCad.endereco}
+					</h:column>
+					
+					
+					
+					<h:column>
+						<f:facet name="header">Disciplina</f:facet>
+						#{professorCad.disciplina}
+					
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Salario</f:facet>
+						#{professorCad.salario}
+					
+					</h:column>
+					
+					
+					<h:column>
+						<f:facet name="header">Deletar</f:facet>
+						<h:commandLink id="deletar" value="Deletar" action="#{professorBean.deletarProfessor(professorItem)}"
+							onclick="return confirm ('Deseja Deletar?')">
+						
+						</h:commandLink>
+						
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Editar</f:facet>
+						<h:commandLink id="editar" value="Editar" action="#{professorBean.editarProfessor(professorItem)}"
+							onclick="return confirm ('Deseja Atualizar o professor?')">
+						
+						</h:commandLink>
+						
+					</h:column>
+					
+				
+				</h:dataTable>
+		
+			</h:form>
+		</h:body>
+</html>

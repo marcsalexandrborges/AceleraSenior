@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:b="http://java.sun.com/jsf/core">
+	 
+		<h:head>
+	         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	         <title>Cadastro  Endereço</title>
+       </h:head>
+       <h:body>
+
+	           <h:form>
+		            <h:outputLabel value="Cidade:  "/>
+		            <h:inputText id="campoCidade" value="#{endereco.cidadeBean}"/>
+		       		<br/>
+		            <h:outputLabel value="Rua:   "/>
+		            <h:inputText id="campoRua" value="#{endereco.ruaBean}"/>
+		       		<br/>
+		            <h:outputLabel value="Casa: "/>
+		            <h:inputText id="campoCasa" value="#{endereco.casaBean}"/>
+		            <br/>
+		            <h:commandButton value="Enviar" action="#{endereco.salvarEndereco}"/>
+	          </h:form>
+	          
+			  <br/>
+			  <br/>
+				
+			  <h:dataTable value="#{endereco.enderecos}" var="cadEndereco" border="2" id="tabelaEndereco">
+			  <h:column>
+					<f:facet name="header">Cidade</f:facet>
+					#{cadEndereco.cidade}
+				
+			  </h:column>
+				
+			  <h:column>
+					<f:facet name="header">Rua</f:facet>
+					#{cadEndereco.rua}
+				
+			  </h:column>
+				
+			  <h:column>
+					<f:facet name="header">Casa</f:facet>
+					#{cadEndereco.casa}
+				
+			  </h:column>
+				
+					
+			  </h:dataTable>
+				
+				
+				
+      </h:body>
+</html>
+
+
